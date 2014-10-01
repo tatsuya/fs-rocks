@@ -5,8 +5,7 @@ var data = 'Hello';
 
 fs.writeFile(filename, data, function(err) {
   if (err) {
-    console.log(err);
-  } else {
-    console.log("The file was saved!");
+    throw err;
   }
+  console.log("The file was saved!");
 });

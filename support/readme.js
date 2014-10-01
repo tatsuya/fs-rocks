@@ -3,7 +3,7 @@
 var fs = require('fs');
 var join = require('path').join;
 var dir = join(__dirname, '../');
-var isjs = /^.*\.js/;
+var isjs = /^.*\.js$/;
 var readme = join(__dirname, '../README.md');
 
 var header = '# fs-rocks\n\n## rocks\n\n';

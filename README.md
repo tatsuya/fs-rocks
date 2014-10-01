@@ -26,6 +26,30 @@ var data = fs.readFileSync(filename, 'utf8');
 console.log(data);
 ```
 
+readJSON.js
+
+```js
+var fs = require('fs');
+var join = require('path').join;
+var filename = join(__dirname, 'package.json');
+
+fs.readFile(filename, 'utf8', function(err, data) {
+  if (err) throw err;
+  console.log(JSON.parse(data));
+});
+```
+
+readJSONSync.js
+
+```js
+var fs = require('fs');
+var join = require('path').join;
+var filename = join(__dirname, 'package.json');
+
+var data = fs.readFileSync(filename, 'utf8');
+console.log(JSON.parse(data));
+```
+
 readdir.js
 
 ```js
@@ -64,10 +88,9 @@ var data = 'Hello';
 
 fs.writeFile(filename, data, function(err) {
   if (err) {
-    console.log(err);
-  } else {
-    console.log("The file was saved!");
+    throw err;
   }
+  console.log("The file was saved!");
 });
 ```
 
@@ -80,6 +103,54 @@ var filename = '/tmp/hello.txt';
 var data = 'Hello';
 
 fs.writeFileSync(filename, data);
+```
+
+writeJSON.js
+
+```js
+var fs = require('fs');
+var join = require('path').join;
+var filename = '/tmp/hello.json';
+var data = {
+  hello: 'world'
+};
+var space = 2;
+
+var str = '';
+try {
+  str = JSON.stringify(data, null, space);
+} catch (err) {
+  throw err;
+}
+
+fs.writeFile(filename, str, function(err) {
+  if (err) {
+    throw err;
+  }
+  console.log("The file was saved!");
+});
+```
+
+writeJSONSync.js
+
+```js
+var fs = require('fs');
+var join = require('path').join;
+var filename = '/tmp/hello.json';
+var data = {
+  hello: 'world'
+};
+var space = 2;
+
+var str = '';
+try {
+  str = JSON.stringify(data, null, space);
+} catch (err) {
+  throw err;
+}
+
+fs.writeFileSync(filename, str);
+
 ```
 
 ## contribution
