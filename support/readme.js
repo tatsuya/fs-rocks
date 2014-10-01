@@ -16,7 +16,7 @@ var files = fs.readdirSync(dir);
 for (var i = 0; i < files.length; i++) {
   if (files[i].match(isjs)) {
     var filename = files[i];
-    var data = fs.readFileSync(join(dir, filename), 'utf-8');
+    var data = fs.readFileSync(join(dir, filename), 'utf8');
     fileContent += filename + '\n\n';
     fileContent += '```js\n';
     fileContent += data + '\n';
