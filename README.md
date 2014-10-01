@@ -5,8 +5,6 @@
 readFile.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var filename = join(__dirname, 'README.md');
@@ -20,8 +18,6 @@ fs.readFile(filename, 'utf8', function(err, data) {
 readFileSync.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var filename = join(__dirname, 'README.md');
@@ -33,8 +29,6 @@ console.log(data);
 readdir.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var tmpPath = '/tmp';
@@ -50,8 +44,6 @@ fs.readdir(tmpPath, function(err, files) {
 readdirSync.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var tmpPath = '/tmp';
@@ -65,8 +57,6 @@ for (var i = 0; i < files.length; i++) {
 writeFile.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var filename = '/tmp/hello.txt';
@@ -84,8 +74,6 @@ fs.writeFile(filename, data, function(err) {
 writeFileSync.js
 
 ```js
-#!/usr/bin/env node
-
 var fs = require('fs');
 var join = require('path').join;
 var filename = '/tmp/hello.txt';
