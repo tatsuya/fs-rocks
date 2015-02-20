@@ -1,5 +1,4 @@
 var fs = require('fs');
-var join = require('path').join;
 var filename = '/tmp/hello.json';
 var data = {
   hello: 'world'
@@ -17,5 +16,5 @@ fs.writeFile(filename, str, function(err) {
   if (err) {
     throw err;
   }
-  console.log("The file was saved!");
+  console.log('The file was saved!');
 });
